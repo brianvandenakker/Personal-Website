@@ -29,7 +29,7 @@ layout = html.Div([
         html.Div([
             dcc.Dropdown(id="variable_selector",
                 options =  [{'label': 'Confirmed Cases', 'value': 'confirmed_cases'},
-                            {'label': 'Confirmed Deaths', 'value': 'confirmed_deaths'},
+                            {'label': 'Total Deaths', 'value': 'confirmed_deaths'},
                             {'label': 'School Closing', 'value': 'c1_school_closing'},
                             {'label': 'Restrict Gatherings', 'value': 'c4_restrictions_on_gatherings'},
                             {'label': 'Workplace Closing', 'value': 'c2_workplace_closing'},
@@ -62,7 +62,7 @@ layout = html.Div([
 
                 html.Div([dcc.Dropdown(id="line_selector",
                     options = [{'label': 'Confirmed Cases', 'value': 'confirmed_cases'},
-                               {'label': 'Confirmed Deaths', 'value': 'confirmed_deaths'},
+                               {'label': 'Total Deaths', 'value': 'confirmed_deaths'},
                                {'label': 'Deaths per Million', 'value': 'deaths_per_million'},
                                {'label': 'Confirmed Cases per Million', 'value': 'cases_per_million'},
                                {'label': 'Moving Average, % change in Deaths', 'value': 'ma_percent_change_deaths_per_million'},

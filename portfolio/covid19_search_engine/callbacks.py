@@ -39,7 +39,7 @@ def register_callbacks(dashapp):
         if tab == 'tab-1':
             return html.Div([
                     html.Div([dcc.Dropdown(id="paper-search", placeholder = "Search Papers in COVID-19 Open Research Dataset...")], style = {'width':'50%' , 'margin':'auto'}),
-                    dcc.Loading(html.Div(html.Ul(id = 'similar-papers-db'), style={'font-family':'sans-serif', 'width': '70%', 'margin':'10%'}), type = "cube"),
+                    dcc.Loading(html.Div(html.Ul(id = 'similar-papers-db'), style={'font-family':'sans-serif', 'width': '70%', 'margin':'10%'}), type = "dot"),
                     dbc.Button("", id='button', outline=True, color="primary", className="mr-1", style={'margin-left': '-100%'})])
         elif tab == 'tab-2':
             return html.Div([dcc.Textarea(

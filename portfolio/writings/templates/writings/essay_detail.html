@@ -4,10 +4,12 @@
 <div class="container">
 <br>
 <br>
-<h5 class="mb-0">{{essay.title}}</h5>
-<br>
-<p class="container fa-ul mb-0 px-5">{{essay.text | safe}}</p>
-<br>
+<div style = "padding-right:15%"class="container-md">
+  <h4 class="mb-0">{{essay.title}}</h4>
+  <br>
+  <p class="container fa-ul mb-0 mr-5 px-5">{{essay.text | safe}}</p>
+  <br>
+</div>
 {% if current_user.is_authenticated %}
 <div class=' text-center'>
   <a class = "btn btn-primary" href="{{url_for('writings.essay_update', essay_id = essay.id)}}">Update</a>

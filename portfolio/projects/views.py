@@ -23,10 +23,10 @@ def post_project():
         return redirect(url_for('index'))
     return render_template('post_project.html', form = form)
 
-@projects_blueprint.route('/<int:project_id>')
-def project_detail(project_id):
-    project = Project.query.get_or_404(project_id)
-    return render_template('project_detail.html' , project = project)
+#@projects_blueprint.route('/<int:project_id>')
+#def project_detail(project_id):
+#    project = Project.query.get_or_404(project_id)
+#    return render_template('project_detail.html' , project = project)
 
 @projects_blueprint.route('/<int:project_id>/update', methods = ['GET', 'POST'])
 @login_required
@@ -37,14 +37,14 @@ def project_update(project_id):
         project.title = form.title.data
         project.description = form.description.data
         project.image = form.image_url.data
-        project.path = form.path.data
+        project.urlpath = form.urlpath.data
         db.session.commit()
         return redirect(url_for('index'))
     elif request.method == 'GET':
         form.title.data = project.title
         form.description.data = project.description
         form.image_url.data = project.image
-        form.path.data = project.path
+        form.urlpath.data = project.urlpath
     return render_template('post_project.html', title = 'Updating Project', form = form)
 
 @projects_blueprint.route('/<int:project_id>/delete', methods = ['GET', 'POST'])

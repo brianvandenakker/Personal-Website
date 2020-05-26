@@ -6,6 +6,8 @@ from flask_login import LoginManager
 import dash
 import dash_bootstrap_components as dbc
 from flask.helpers import get_root_path
+from flask import render_template, request
+from portfolio.models import Essay, Project
 
 def create_app():
     basedir = os.path.abspath(os.path.dirname(__file__))
@@ -26,8 +28,20 @@ def create_app():
     register_extensions(server)
     register_blueprints(server)
 
+    @server.route('/')
+    def index():
+        page = request.args.get('page', 1, type=int)
+        essays = Essay.query.order_by(Essay.id.desc()).paginate(page=page, per_page=5)
+        projects = Project.query.order_by(Project.id.desc()).paginate(page=page, per_page = 5)
+        return render_template('index.html', essays = essays, projects = projects)
+
+    @server.errorhandler(404)
+    def page_not_found(e):
+        return render_template('error_handler.html'), 404
+
+
     return server
-    
+
 
 
 
