@@ -242,6 +242,8 @@ def register_callbacks(dashapp):
 
         summary = f"""
         Global Statistics \n
+        Confirmed Cases: { df['confirmed_cases'].sum()} |
+        Total Deaths: {np.sum(df['confirmed_deaths'])} |
         Countries with workplace closings: {(np.count_nonzero(df['c2_workplace_closing']))} |
         Countries with state at home requirements: {sum(1 for i in df['c6_stay_at_home_requirements'] if i and pd.notnull(i))}
         """
