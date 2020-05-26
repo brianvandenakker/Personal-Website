@@ -1,0 +1,65 @@
+<!--Projects-->
+<section class="resume-section" id="projects">
+    <div class="resume-section-content">
+        <h3 class="mb-5">Projects</h3>
+        <div class="container">
+          {% for project in projects.items %}
+          <a href="#">
+            <div class="card">
+              <img class="card-img" src="{{project.image}}" alt="Card image">
+              <div class="card-img-overlay blend" id= "contrast">
+                <h3 class="card-text">{{project.title}}</h3>
+                <p class="card-text">{{project.description}}</p>
+                <div class="text-center form-check-label">
+                </div>
+              </div>
+            </div>
+            <br>
+          </a>
+          {% if current_user.is_authenticated %}
+          <div class=' text-center'>
+            <a class = "btn btn-primary" href="{{url_for('project_update', project_id = project.id)}}">Update</a>
+            <button type="button" class="btn btn-danger" data-toggle='modal' data-target="#delete_modal">Delete</button>
+          </div>
+          <br>
+          <br>
+          <div class="modal" tabindex="-1" role="dialog" id="delete_modal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Delete Project</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Are you sure you want to delete this Project?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <form action="{{url_for('project_delete', project_id = project.id)}}" method="post">
+                  <input class = 'btn btn-danger' type="submit" name="" value="Delete">
+                </form>
+              </div>
+            </div>
+          </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+          <ul class='pagination justify-content-center'>
+            {% for page_num in projects.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2)%}
+              {% if projects.page == page_num %}
+              <li class='page-item disabled'>
+                <a class='page-link' href="{{url_for('index', page=page_num)}}#projects">{{page_num}}</a>
+              </li>
+              {% else %}
+              <li class='page-item'>
+                <a class='page-link' href="{{url_for('index', page=page_num)}}#projects">{{page_num}}</a>
+              </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+
+        </div>
+    </div>
+</section>

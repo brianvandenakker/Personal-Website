@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<div class="container">
+  <h4>Post New Project</h4>
+</div>
+<div class="container">
+  <form class = "form-group" method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.title.label(class = "form-control-label") }}
+      {{ form.title(class = "form-control form-control-lg") }}<br>
+    </div>
+    <div class="form-group">
+      {{ form.description.label(class = "form-control-label") }}
+      {{ form.description(class = "form-control form-control-lg") }}<br>
+    </div>
+    <div class="form-group">
+      {{ form.image_url.label(class = "form-control-label") }}
+      <p>Pass in: https://source.unsplash.com/723x270/?</p>
+      <p>Add: Keywords at unsplash.com after the '?' in lowercase for random photo generation related to the keyword</p>
+      {{ form.image_url(class = "form-control form-control-lg") }}<br>
+    </div>
+    <div class="form-group">
+      {{ form.submit(class = "btn btn-outline-info") }}
+    </div>
+  </form>
+</div>
+
+{% endblock %}

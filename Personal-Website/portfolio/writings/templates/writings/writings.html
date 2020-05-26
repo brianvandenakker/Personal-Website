@@ -1,0 +1,28 @@
+<!--Writings-->
+<section class="resume-section" id="writings">
+    <div class="resume-section-content">
+      <h3 class="mb-5">Writings</h3>
+      <ul>
+        {% for essay in essays.items %}
+        <li>
+          <h4><a  href="{{url_for('essay_detail', essay_id = essay.id)}}">{{essay.title}}</a></h4>
+          <p>{{essay.text | truncate(450) | safe}}</p>
+        </li>
+        {% endfor %}
+        <ul class='pagination justify-content-center'>
+          {% for page_num in essays.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2)%}
+            {% if essays.page == page_num %}
+            <li class='page-item disabled'>
+              <a class='page-link' href="{{url_for('index', page=page_num)}}#writings">{{page_num}}</a>
+            </li>
+            {% else %}
+            <li class='page-item'>
+              <a class='page-link' href="{{url_for('index', page=page_num)}}#writings">{{page_num}}</a>
+            </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+
+      </ul>
+    </div>
+</section>
