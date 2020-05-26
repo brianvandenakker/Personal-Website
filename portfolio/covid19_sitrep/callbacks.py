@@ -15,7 +15,8 @@ locale.setlocale(locale.LC_ALL, 'en_US')
 
 
 
-covid_data = pd.read_csv(os.path.join(os.path.dirname(__file__), "data/covid_country_level_data.csv"))
+#covid_data = pd.read_csv(os.path.join(os.path.dirname(__file__), "data/covid_country_level_data.csv"))
+covid_data = pd.read_csv("https://raw.githubusercontent.com/BriVandenAkker/Personal-Website/master/portfolio/covid19_sitrep/data/covid_country_level_data.csv?token=ALIDH4LVZ55Q4DC6OV62R3K6ZVPAI")
 covid_data.drop(columns = ['m1_wildcard', 'stringency_index','legacy_stringency_index_for_display', 'legacy_stringency_index', 'age_percent_0_to_14',
                            'age_percent_15_to_64'], inplace = True)
 
