@@ -40,9 +40,8 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('index')}}#awards">Awards</a></li>
                     {% if current_user.is_authenticated %}
                     <hr class="m-0" />
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('post_essay')}}">Post Essay</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('post_project')}}">Post Project</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('logout')}}">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('writings.post_essay')}}">Post Essay</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('projects.post_project')}}">Post Project</a></li>
                     {% endif %}
                 </ul>
             </div>

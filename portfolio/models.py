@@ -43,10 +43,13 @@ class Project(db.Model):
     title = db.Column(db.Text)
     description = db.Column(db.Text)
     image = db.Column(db.Text)
-    def __init__(self, title, description, image):
+    urlpath = db.Column(db.Text)
+
+    def __init__(self, title, description, image, urlpath):
         self.title = title
         self.description = description
         self.image = image
+        self.urlpath = urlpath
 
     def __repr__(self):
         return self.title

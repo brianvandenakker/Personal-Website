@@ -16,7 +16,8 @@ def post_project():
         title = form.title.data
         description = form.description.data
         image = form.image_url.data
-        new_project = Project(title, description, image)
+        urlpath = form.urlpath.data
+        new_project = Project(title, description, image, urlpath)
         db.session.add(new_project)
         db.session.commit()
         return redirect(url_for('index'))
@@ -36,12 +37,14 @@ def project_update(project_id):
         project.title = form.title.data
         project.description = form.description.data
         project.image = form.image_url.data
+        project.path = form.path.data
         db.session.commit()
         return redirect(url_for('index'))
     elif request.method == 'GET':
         form.title.data = project.title
         form.description.data = project.description
         form.image_url.data = project.image
+        form.path.data = project.path
     return render_template('post_project.html', title = 'Updating Project', form = form)
 
 @projects_blueprint.route('/<int:project_id>/delete', methods = ['GET', 'POST'])

@@ -10147,21 +10147,21 @@ section.resume-section .resume-section-content {
   }
 }
 
-#red {
+.red {
   color: red !important;
 }
 
-#blue {
+.blue {
   color: blue !important;
 }
 
-#green {
+.green {
   color: green !important;
 }
 
 #contrast{
-  mix-blend-mode: exclusion;
-  color: rgb(0, 255, 255);
+  mix-blend-mode: exclusion !important;
+  color: white
 }
 
 .top-buffer { margin-top:20px; }

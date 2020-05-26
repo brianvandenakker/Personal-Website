@@ -4,12 +4,12 @@
         <h3 class="mb-5">Projects</h3>
         <div class="container">
           {% for project in projects.items %}
-          <a href="#">
+          <a href={{project.urlpath}}>
             <div class="card">
               <img class="card-img" src="{{project.image}}" alt="Card image">
-              <div class="card-img-overlay blend" id= "contrast">
-                <h3 class="card-text">{{project.title}}</h3>
-                <p class="card-text">{{project.description}}</p>
+              <div class="card-img-overlay" id= "contrast">
+                <b><header class="card-text" style="font-size:3vw">{{project.title}}</header></b>
+                <p class="card-text blue" style="font-size:2vw">{{project.description}}</p>
                 <div class="text-center form-check-label">
                 </div>
               </div>
@@ -18,7 +18,7 @@
           </a>
           {% if current_user.is_authenticated %}
           <div class=' text-center'>
-            <a class = "btn btn-primary" href="{{url_for('project_update', project_id = project.id)}}">Update</a>
+            <a class = "btn btn-primary" href="{{url_for('projects.project_update', project_id = project.id)}}">Update</a>
             <button type="button" class="btn btn-danger" data-toggle='modal' data-target="#delete_modal">Delete</button>
           </div>
           <br>
@@ -37,7 +37,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <form action="{{url_for('project_delete', project_id = project.id)}}" method="post">
+                <form action="{{url_for('projects.project_delete', project_id = project.id)}}" method="post">
                   <input class = 'btn btn-danger' type="submit" name="" value="Delete">
                 </form>
               </div>

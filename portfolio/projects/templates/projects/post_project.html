@@ -23,6 +23,11 @@
       {{ form.image_url(class = "form-control form-control-lg") }}<br>
     </div>
     <div class="form-group">
+      {{ form.urlpath.label(class = "form-control-label") }}
+      <p>Pass in the path to the project</p>
+      {{ form.urlpath(class = "form-control form-control-lg") }}<br>
+    </div>
+    <div class="form-group">
       {{ form.submit(class = "btn btn-outline-info") }}
     </div>
   </form>

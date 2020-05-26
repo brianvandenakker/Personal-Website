@@ -1,6 +1,9 @@
 <!-- About-->
 <section class="resume-section" id="about">
     <div class="resume-section-content">
+        {% if current_user.is_authenticated %}
+        <a class="btn btn-primary float-right" href="{{ url_for('user.logout')}}">Logout</a>
+        {% endif %}
         <a href="../static/file/Resume_VandenAkker.pdf" target = '_blank' class="btn btn-primary float-right">View Resume</a>
         <h3 class="mb-0">Brian VandenAkker</h3>
         <div class="subheading mb-1">Greater Boston Area · MA · (774) 280-6969 · <a href="mailto:brian.m.vandenakker@email.com">brian.m.vandenakker@gmail.com</a></div>
