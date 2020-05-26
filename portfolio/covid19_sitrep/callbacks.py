@@ -9,10 +9,6 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import plotly.graph_objs as go
 from dash.exceptions import PreventUpdate
-import locale
-
-locale.setlocale(locale.LC_ALL, 'en_US')
-
 
 
 covid_data = pd.read_csv(os.path.join(os.path.dirname(__file__), "data/covid_country_level_data.csv"))
@@ -246,8 +242,6 @@ def register_callbacks(dashapp):
 
         summary = f"""
         Global Statistics \n
-        Confirmed Cases: {locale.format("%d", df['confirmed_cases'].sum(), grouping=True)} |
-        Total Deaths: {locale.format("%d", np.sum(df['confirmed_deaths']), grouping = True)} |
         Countries with workplace closings: {(np.count_nonzero(df['c2_workplace_closing']))} |
         Countries with state at home requirements: {sum(1 for i in df['c6_stay_at_home_requirements'] if i and pd.notnull(i))}
         """
