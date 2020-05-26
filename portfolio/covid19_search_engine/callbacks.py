@@ -15,8 +15,7 @@ from sklearn.decomposition import LatentDirichletAllocation
 
 
 
-#covid_papers = pd.read_csv(os.path.join(os.path.dirname(__file__), "data/covid_papers.csv"))
-covid_papers = pd.read_csv("https://raw.githubusercontent.com/BriVandenAkker/COVID19_RESEARCH/master/data/covid_papers.csv")
+covid_papers = pd.read_csv(os.path.join(os.path.dirname(__file__), "data/covid_papers.csv"))
 options = [{'label': f"{title}", 'value':f"{index}"} for index, title in enumerate(covid_papers['title'])]
 
 
