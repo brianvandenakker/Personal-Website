@@ -15,7 +15,6 @@ def login():
         user = User.query.filter_by(username = form.username.data).first()
         if user.check_password(form.password.data) and user is not None:
             login_user(user)
-            flash('Successful Login')
             return redirect('/')
     return render_template('login.html', form=form)
 
@@ -29,7 +28,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         return redirect(url_for('user.login'))
-    return render_template('register.html', form=form)
+    return render_template('login.html', form=form)
 
 
 
