@@ -4,18 +4,17 @@
         {% if current_user.is_authenticated %}
         <a class="btn btn-primary float-right" href="{{ url_for('user.logout')}}">Logout</a>
         {% endif %}
-        <a href="../static/file/Resume_VandenAkker.pdf" target = '_blank' class="btn btn-primary float-right">View Resume</a>
         <h3 class="mb-0">Brian VandenAkker</h3>
         <div class="subheading mb-1">Greater Boston Area · MA · (774) 280-6969 · <a href="mailto:brian.m.vandenakker@email.com">brian.m.vandenakker@gmail.com</a></div>
         <hr>
         <br>
-        <p class="lead mb-5">I’m a Marine Corps Veteran, Boston College Alumnus, and aspiring Data Scientist. My current interests surround applying theoretical knowledge in machine learning and economics to real world problems
-                             in order to improve our understanding of those problems by supporting or refuting hypotheses attempting to explain them. I joined the Marine Corps for the challenge, but also to contribute
-                             to the maintenance of the  American experiment which I see as an engineered meta-problem solver through its assurance of open, distributed, and liberal social networks. I studied economics and
-                             data analytics to build the theoretical knowledge necessary to be productive in solving the broad range of problems we need to solve in order to maintain current levels of economic growth, and I studied mathematics because it excited me and showed me many reasons to think beauty and truth
-                             are in many ways one and the same.</p>
+        <p class="lead mb-5">I’m a Marine Corps Veteran, Boston College Alumnus, and aspiring Data Scientist.
+                             I’ve recently finished my seventh and final year with the Marines, and am now looking to
+                             apply my knowledge in data analytics, economics, statistics, mathematics, and computer programming
+                             to real world problems as a data scientist or economic consultant. </p>
+        <p class="lead mb-5">This site is used as a container and place to consolidate my recent projects and essays.
+                             It's also currently being used a place to showcase my achievements while I'm searching for new employment.</p>
+        <a class="" href="{{url_for('writings.about_detail')}}">More About Me -></a>
 
-        <p class="lead mb-5">I’ve recently finished my seventh and final year with the Marines, and am now looking to apply my knowledge in data analytics, economics, statistics, mathematics, and computer programming to real world problems.
-                             This site is used as a container and place to consolidate my recent projects and essays. It's also currently being used a place to showcase my achievements while I'm searching for new employment.</p>
     </div>
 </section>

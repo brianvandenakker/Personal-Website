@@ -30,6 +30,11 @@
                     <div class="social-icons">
                         <a class="social-icon" href="https://www.linkedin.com/in/brianvandenakker/"><i class="fab fa-linkedin-in"></i></a><a class="social-icon" href="https://github.com/BriVandenAkker"><i class="fab fa-github"></i></a><a class="social-icon" href="https://twitter.com/BriVandenAkker"><i class="fab fa-twitter"></i></a>
                     </div>
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('writings.post_essay')}}">Post Essay</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('projects.post_project')}}">Post Project</a></li>
+                    <hr class="m-0" />
+                    {% endif %}
                     <br>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('index')}}#about">About</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('index')}}#projects">Projects</a></li>
@@ -38,11 +43,8 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('index')}}#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('index')}}#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('index')}}#awards">Awards</a></li>
-                    {% if current_user.is_authenticated %}
-                    <hr class="m-0" />
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('writings.post_essay')}}">Post Essay</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ url_for('projects.post_project')}}">Post Project</a></li>
-                    {% endif %}
+                    <hr>
+                    <li class="nav-item"><a class="btn btn-sm btn-outline-info nav-link js-scroll-trigger" href="../static/file/Resume_VandenAkker.pdf" target = '_blank'>Download Resume</a>
                 </ul>
             </div>
         </nav>

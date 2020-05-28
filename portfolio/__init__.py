@@ -12,7 +12,7 @@ from portfolio.models import Essay, Project
 def create_app():
     basedir = os.path.abspath(os.path.dirname(__file__))
     server = Flask(__name__)
-    server.config['SECRET_KEY'] = 'temporarysecretkey'
+    server.config['SECRET_KEY'] = '\xc1\x96[\x07a\xac\xbc.\xe5\xaf-\x13r\x05\x9a\x86;}I\xc6\xac\x80\xff^'
     server.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
     server.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
