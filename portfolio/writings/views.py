@@ -7,7 +7,7 @@ from flask_login import login_required
 writings_blueprint = Blueprint('writings', __name__, template_folder = 'templates/writings')
 
 @writings_blueprint.route('/about')
-def about()
+def about():
     return render_template('about_detail.html')
 
 @writings_blueprint.route('/post', methods = ['GET', 'POST'])
