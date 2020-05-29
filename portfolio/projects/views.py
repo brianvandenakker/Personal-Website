@@ -23,10 +23,6 @@ def post_project():
         return redirect(url_for('index'))
     return render_template('post_project.html', form = form)
 
-#@projects_blueprint.route('/<int:project_id>')
-#def project_detail(project_id):
-#    project = Project.query.get_or_404(project_id)
-#    return render_template('project_detail.html' , project = project)
 
 @projects_blueprint.route('/<int:project_id>/update', methods = ['GET', 'POST'])
 @login_required
